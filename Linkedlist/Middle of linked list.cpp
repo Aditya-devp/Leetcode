@@ -1,4 +1,4 @@
-class Solution {
+class solution {
 public:
     ListNode* middleNode(ListNode* head) {
          ListNode* slow = head; 
