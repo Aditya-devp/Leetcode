@@ -3,10 +3,10 @@ public:
     vector<vector<int>> permute(vector<int>& nums) {
         
         sort(nums.begin(),nums.end());
-        vector<vector<int>> ans;
+        vector<vector<int>> answer;
         do {
-            ans.push_back(nums);
+            answer.push_back(nums);
         } while (next_permutation(nums.begin(),nums.end()));
-        return ans;
+        return answer;
     }
 };
