@@ -1,4 +1,4 @@
-class Solution {
+class solution {
 public:
     void moveZeroes(vector<int>& nums) {
         vector<int>v;
