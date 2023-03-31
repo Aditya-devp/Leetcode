@@ -1,21 +1,28 @@
 class Solution {
 public:
-    vector<int> plusOne(vector<int>& v) {
-        int n = v.size();
-        for(int i = n-1; i >= 0; i--){
-            if(i == n-1)
-                v[i]++;
-            if(v[i] == 10){
-                v[i] = 0;
-                if(i != 0){
-                    v[i-1]++;
-                }
-                else{
-                    v.push_back(0);
-                    v[i] = 1;
-                }
+    int romanToInt(string s) {
+        unordered_map<char,int>map={
+            {'I',1},
+            {'V',5},
+            {'X',10},
+            {'L',50},
+            {'C',100},
+            {'D',500},
+            {'M',1000},
+
+
+        };
+int ans=0;
+        for(int i=0;i<s.size();i++){
+            if(map[s[i]]<map[s[i+1]]){
+                ans-=map[s[i]];
             }
+            else{
+                ans+=map[s[i]];
+            }
+
         }
-        return v;
+        return ans;
+        
     }
 };
