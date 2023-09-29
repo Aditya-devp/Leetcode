@@ -1,21 +1,20 @@
-#include <bits/stdc++.h>
-using namespace std;
+class Solution {
+public:
+    bool isMonotonic(vector<int>& nums) {
+        bool dec=true;
+        bool inc=true;
+        for(int i=1;i<nums.size();i++){
+            if(nums[i]<nums[i-1])inc=false;
+            if(nums[i]>nums[i-1])dec=false;
 
-void solve() {
-	string s;
-	cin >> s;
-	if(s[0]+s[1]+s[2] == s[3]+s[4]+s[5]) {
-		cout << "YES" << endl;
-	}
-	else {
-		cout << "NO" << endl;
-	}
-}
+            if(!dec and !inc) break;
+        }
 
-int main() {
-	int t = 1;
-	cin >> t;
-	while (t--) {
-		solve();
-	}
-}
+        return inc||dec;
+
+
+        
+       
+        
+    }
+};
